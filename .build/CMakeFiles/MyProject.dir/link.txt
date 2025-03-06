@@ -1,1 +1,0 @@
-/usr/bin/cc   -rdynamic CMakeFiles/MyProject.dir/src/main.o CMakeFiles/MyProject.dir/src/users.o CMakeFiles/MyProject.dir/src/processes.o CMakeFiles/MyProject.dir/src/help.o CMakeFiles/MyProject.dir/src/log.o CMakeFiles/MyProject.dir/src/errors.o  -o MyProject 
