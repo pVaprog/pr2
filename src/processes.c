@@ -42,5 +42,6 @@ void list_processes()
 	// Выводим отсортированный список
 	for (int i = 0; i < count; i++) {
 		printf("PID: %d\n", pids[i]);
+		fflush(stdout);  // Сброс буфера stdout
 	}
 }

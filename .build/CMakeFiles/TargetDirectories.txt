@@ -1,0 +1,3 @@
+/home/astraadmin/cipo/pr2/.build/CMakeFiles/rebuild_cache.dir
+/home/astraadmin/cipo/pr2/.build/CMakeFiles/MyProject.dir
+/home/astraadmin/cipo/pr2/.build/CMakeFiles/edit_cache.dir

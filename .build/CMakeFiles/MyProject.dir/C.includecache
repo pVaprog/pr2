@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/astraadmin/cipo/pr2/src/errors.h
+
+/home/astraadmin/cipo/pr2/src/help.h
+
+/home/astraadmin/cipo/pr2/src/log.h
+
+/home/astraadmin/cipo/pr2/src/main.c
+stdio.h
+-
+stdlib.h
+-
+getopt.h
+-
+unistd.h
+-
+fcntl.h
+-
+users.h
+/home/astraadmin/cipo/pr2/src/users.h
+processes.h
+/home/astraadmin/cipo/pr2/src/processes.h
+help.h
+/home/astraadmin/cipo/pr2/src/help.h
+log.h
+/home/astraadmin/cipo/pr2/src/log.h
+errors.h
+/home/astraadmin/cipo/pr2/src/errors.h
+
+/home/astraadmin/cipo/pr2/src/processes.h
+
+/home/astraadmin/cipo/pr2/src/users.h
+

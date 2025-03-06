@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <getopt.h>
+#include <unistd.h>
+#include <fcntl.h>
 #include "users.h"
 #include "processes.h"
 #include "help.h"
@@ -18,7 +20,7 @@ int main(int argc, char *argv[]) {
 		exit(EXIT_FAILURE);
 	}
 
-	while ((opt = getopt(argc, argv, "u:p:hl:e:")) != -1) {
+	while ((opt = getopt(argc, argv, "uphl:e:")) != -1) {
 		switch (opt) {
 			case 'u':
 				users_flag = 1;
@@ -36,6 +38,20 @@ int main(int argc, char *argv[]) {
 			case 'e':
 				error_path = optarg;
 				redirect_errors(error_path);
+				// Если stdout не перенаправлен, перенаправляем его в /dev/null
+		        if (log_path == NULL) {
+		            int dev_null = open("/dev/null", O_WRONLY);
+		            if (dev_null == -1) {
+		                perror("open");
+		                exit(EXIT_FAILURE);
+		            }
+		            if (dup2(dev_null, STDOUT_FILENO) == -1) {
+		                perror("dup2");
+		                close(dev_null);
+		                exit(EXIT_FAILURE);
+		            }
+		            close(dev_null);
+		        }
 				break;
 			default:
 				fprintf(stderr, "Unknown option: %c\n", opt);
