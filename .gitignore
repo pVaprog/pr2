@@ -5,3 +5,4 @@ MyProject
 *.out
 .vscode/
 .DS_Store
+.build/
