@@ -1,0 +1,7 @@
+MyProject
+*.o
+*.a
+*.so
+*.out
+.vscode/
+.DS_Store
