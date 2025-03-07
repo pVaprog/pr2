@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
     char *error_path = NULL;
     int users_flag = 0, processes_flag = 0;
 
-    // Определение длинных арг-тов
+    // Определение длинных аргументов
     static struct option long_options[] = {
         {"users",    no_argument,       0, 'u'},  // --users эквивалентно -u
         {"processes", no_argument,      0, 'p'},  // --processes эквивалентно -p
