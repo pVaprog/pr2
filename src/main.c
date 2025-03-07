@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
     };
 
     if (argc < 2) {
-        fprintf(stderr, "No arguments provided. Use -h or --help for help.\n");
+        fprintf(stderr, "Ошибка: Не указаны аргументы. Используйте -h или --help для справки.\n");
         exit(EXIT_FAILURE);
     }
 
@@ -65,8 +65,16 @@ int main(int argc, char *argv[]) {
                     close(dev_null);
                 }
                 break;
+            case '?':
+                // Неизвестная опция
+                fprintf(stderr, "Ошибка: Неизвестная опция '%c'\n", optopt);
+                exit(EXIT_FAILURE);
+            case ':':
+                // Отсутствует аргумент для опции
+                fprintf(stderr, "Ошибка: Отсутствует аргумент для опции '%c'\n", optopt);
+                exit(EXIT_FAILURE);
             default:
-                fprintf(stderr, "Unknown option: %c\n", opt);
+                fprintf(stderr, "Ошибка: Неизвестная ошибка при обработке аргументов\n");
                 exit(EXIT_FAILURE);
         }
     }
